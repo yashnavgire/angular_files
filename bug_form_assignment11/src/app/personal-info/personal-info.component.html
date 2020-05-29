@@ -1,0 +1,16 @@
+<div class="container">
+    <p>Your name*</p>
+    <form class="input-group">
+
+        <div class="form-group w-50">
+            <input type="text" class="form-control  mb-2 mr-sm-2" [(ngModel)]="_dataservice.firstName" name="fName">
+            <small>first name</small>
+        </div>
+        <div class="form-group w-50">
+            <input type="text" class="form-control" [(ngModel)]="_dataservice.lastName" name="lName" >
+            <small>last name</small>
+        </div>
+    </form>
+</div>
+
+<app-bug-info></app-bug-info>
