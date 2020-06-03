@@ -1,0 +1,24 @@
+<h1 class="text-center bg-info text-dark" >Market Price</h1>
+
+<ul class="list-group bg-light">
+  <li class="list-group-item" *ngFor="let type of types">
+      <ul>
+          <li class="list-group-item" *ngFor="let item of type | async">
+            <div class="text-info">
+              {{getkey(item)}}
+            </div>
+          <ul>
+            <ng-container *ngFor="let k of key">      <!--2 directives not allowed in one element,therefore ng-container-->
+              <li class="list-group-item text-secondary" *ngIf="k!='name'">
+                {{k}} - {{gitems[k] | currency:'INR'}}
+              </li>
+            </ng-container>
+          </ul>
+        </li>
+      </ul>
+  </li>
+</ul>
+ 
+
+
+
