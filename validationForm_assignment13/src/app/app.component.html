@@ -1,0 +1,185 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3">
+    </div>
+    <div class="col-sm-4 text-center">
+      <h1 style="color:rgb(219,107,180)">Contact Our</h1>
+      <h1>Customer Support Center</h1>
+    </div>
+
+    <div class="col-sm-4">
+      <img src="assets/MarvellousImage.ico" >
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3">
+    </div>
+    <div class="col-sm-4 text-center">
+      <h3>Contact Information</h3>
+      <h6>fill out your contact information</h6>
+    </div>
+  </div>
+
+  <form [formGroup]="supportForm">
+    <br />
+    <div class="row">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-1 text-sm-left">
+      <span>Name </span> <Span style="color:rgb(247, 9, 163)">*</Span>
+      </div>
+    </div>
+
+   
+    <div class="row form-group">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-2">
+        <input [class.is-invalid]="supportForm.get('firstname').invalid &&  (supportForm.get('firstname').touched || supportForm.get('firstname').dirty)" formControlName="firstname" type="text" class="form-control ">
+        <div *ngIf="supportForm.get('firstname').invalid &&  (supportForm.get('firstname').touched || supportForm.get('firstname').dirty);else normal">
+          <small class="text-danger">{{errorMessage('firstname')}}</small>
+        </div>
+        <ng-template #normal>
+          <small>first name</small>
+        </ng-template>
+      </div>
+
+      <div class="col-sm-0.5"></div>
+      <div class="col-sm-2 form-group">
+        <input [class.is-invalid]="supportForm.get('lastname').invalid && (supportForm.get('lastname').touched || supportForm.get('lastname').dirty)" formControlName="lastname" type="text" class="form-control ">
+        <div *ngIf="supportForm.get('lastname').invalid && (supportForm.get('lastname').touched || supportForm.get('lastname').dirty);else normal_last">
+          <small class="text-danger">{{errorMessage('lastname')}}</small>
+        </div>
+        <ng-template #normal_last>
+          <small>last name</small>
+        </ng-template>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-1 text-sm-left">
+      <span>Email </span> <Span style="color:rgb(247, 9, 163)">*</Span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-7 form-group">
+        <input [class.is-invalid]="supportForm.get('email').invalid && (supportForm.get('email').dirty || supportForm.get('email').touched)" formControlName="email" type="text" class="form-control ">
+        <div *ngIf="supportForm.get('email').invalid && (supportForm.get('email').dirty || supportForm.get('email').touched)">
+          <small class="text-danger">{{errorMessage('email')}}</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-1 text-sm-left">
+      <span>Phone </span> <Span style="color:rgb(247, 9, 163)">*</Span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-7 form-group">
+        <input [class.is-invalid]="supportForm.get('phone').invalid && (supportForm.get('phone').dirty || supportForm.get('phone').touched)" formControlName="phone" type="text" class="form-control ">
+        <div *ngIf="supportForm.get('phone').invalid && (supportForm.get('phone').dirty || supportForm.get('phone').touched)">
+          <small class="text-danger">{{errorMessage('phone')}}</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-1 text-sm-left">
+      <span>City</span> <Span style="color:rgb(247, 9, 163)">*</Span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-7 form-group">
+        <input [class.is-invalid]="supportForm.get('city').invalid && (supportForm.get('city').dirty || supportForm.get('city').touched)" formControlName="city" type="text" class="form-control ">
+        <div *ngIf="supportForm.get('city').invalid && (supportForm.get('city').dirty || supportForm.get('city').touched)">
+          <small class="text-danger">{{errorMessage('city')}}</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-1 text-sm-left">
+      <span>State</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-7 form-group">
+        <input list="encodings" value="" class="form-control" formControlName="state" />
+        <datalist id="encodings">
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Madhya Pradesh">Madhya Pradesh</option>
+        </datalist>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-1 text-sm-left">
+      <span>Zip</span> <Span style="color:rgb(247, 9, 163)">*</Span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-7 form-group">
+        <input [class.is-invalid]="supportForm.get('zip').invalid && (supportForm.get('zip').dirty || supportForm.get('city').touched)" formControlName="zip" type="text" class="form-control ">
+        <div *ngIf="supportForm.get('zip').invalid && (supportForm.get('zip').dirty || supportForm.get('zip').touched)">
+          <small class="text-danger">{{errorMessage('zip')}}</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-1 text-sm-left">
+      <span>Comments</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-7 form-group">
+        <textarea rows="6" cols="130"  [class.is-invalid]="supportForm.get('comment').invalid && (supportForm.get('comment').dirty || supportForm.get('comment').touched)" formControlName="comment" type="text" class="form-control ">
+        </textarea>
+          <div *ngIf="supportForm.get('comment').invalid && (supportForm.get('comment').dirty || supportForm.get('comment').touched)">
+          <small class="text-danger">{{errorMessage('comment')}}</small>
+        </div>
+      </div>
+    </div>
+
+    <br/>
+    <div class="row">
+      <div class="col-sm-5">
+      </div>
+      <div class="col-sm-1 text-sm-left">
+        <button type="button" [disabled]="supportForm.invalid" class="btn btn-light text-white custom-btn-class">Submit Form</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+  
