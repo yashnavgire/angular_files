@@ -1,0 +1,31 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container-fluid text-center">
+  <h3>TODO list</h3>
+  <br/>
+  <form [formGroup]="supportForm">
+        <div class="row">
+          <div class="col-sm-4"></div>
+
+          <div class="col-sm-4">
+            <input formControlName="name" type="text" class="form-control" #cnm>
+            <small class="text-danger">{{err_msg}}</small>
+          </div>
+
+          <div class="col-sm-0.5">
+            <button type="button" (click)="list(cnm)">add item</button>
+          </div>
+
+        </div>
+        <br/>
+          <div *ngFor="let nam of list_names,let i=index">
+              <div *ngIf="nam!=''">
+                {{nam}}
+                <button type="button" (click)="delete(nam)">delete</button>
+              </div>
+          </div>
+        
+  </form>
+
+</div>
+
+  
